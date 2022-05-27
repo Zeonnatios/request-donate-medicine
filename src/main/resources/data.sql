@@ -1,0 +1,2 @@
+INSERT INTO USERS (USERNAME, PASSWORD, AGE, GENDER, ADDRESS)
+  VALUES ('Admin', 'Admin@123', 22, 'Male', 'Admin Address');
