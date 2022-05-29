@@ -1,5 +1,8 @@
-INSERT INTO USERS (USERNAME, PASSWORD, AGE, GENDER, ADDRESS)
-  VALUES ('Admin', 'Admin@123', 22, 'Male', 'Admin Address');
+insert into USERS (USERNAME, PASSWORD, AGE, GENDER, ADDRESS)
+  values ('Admin', 'Admin@123', 22, 'Male', 'Admin Address');
 
-INSERT INTO MEDICINE (NAME, CATEGORY, QUANTITY)
-  VALUES ('Resfenol', 'FEVER', 120);
+insert into MEDICINE (NAME, CATEGORY, QUANTITY)
+  values ('Resfenol', 'FEVER', 120);
+
+ insert into DONATE (MED_CATEGORY, MED_NAME, MED_QUANTITY, USERNAME, ADDRESS, REQUESTED_DATE)
+  values ('FEVER', 'Resfenol', 10, 'Teste', 'endereco', '2022-05-29');
