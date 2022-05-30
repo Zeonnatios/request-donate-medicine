@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate Medicine </title>
+  <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="py-2 bg-light border-bottom">
+  <div class="container d-flex flex-wrap">
+    <ul class="nav me-auto">
+      <li class="nav-item"><a
+          href="/userhome"
+          class="nav-link link-dark px-2 active" aria-current="page">Home</a>
+      </li>
+      <li class="nav-item"><a
+          href="/logout"
+          class="nav-link link-dark px-2">Logout</a></li>
+      <li class="nav-item">
+        <label class="nav-link link-dark px-2" id="welcomeUserName">Logged in User: ...</label>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main" class="container my-5">
+  <form action="/" method="POST" name="donateForm">
+
+    <h1 class="h1" id="title">Donate Medicine</h1>
+
+    <div class="form-group row my-4">
+      <label id="labelMedCategory" for="medCategory"
+             class="col-sm-2 col-form-label">Medicine Category:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="medCategory"
+               name="medCategory" placeholder="Medicine Category" minlength="4" maxlength="30" required>
+      </div>
+    </div>
+
+    <div class="form-group row my-4">
+      <label id="labelDonateMedName" for="medCategory"
+             class="col-sm-2 col-form-label">Medicine Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="donateMedName"
+               name="donateMedName" placeholder="Medicine Name" minlength="4" maxlength="30" required>
+      </div>
+    </div>
+
+    <div class="form-group row my-4">
+      <label id="labelQuantity" for="quantity"
+             class="col-sm-2 col-form-label">Quantity:</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="quantity"
+               name="quantity" placeholder="Medicine Category" minlength="1" required>
+      </div>
+    </div>
+
+    <button id="submitDonate" class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+  </form>
+
+</main>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
