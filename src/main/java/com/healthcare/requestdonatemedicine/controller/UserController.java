@@ -11,4 +11,16 @@ public class UserController {
     return "register";
   }
 
+  @GetMapping(value="/userhome")
+  public String getUserHomePage() { return "user/home"; }
+
+  @GetMapping(value="/userRequestMedicine")
+  public String getUserRequestMedicinePage() { return "user/requestMedicine"; }
+
+  @GetMapping(value="/userDonateMedicine")
+  public String getUserDonateMedicinePage() { return "user/donateMedicine"; }
+
+  @GetMapping(value="/userViewDonateMedicine")
+  public String getUserViewDonateMedicinePage() { return "user/viewDonateMedicine"; }
+
 }
