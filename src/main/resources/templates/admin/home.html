@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>View All Users Donated Medicine Details</title>
+  <title>Admin Home</title>
   <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -26,46 +26,51 @@
 
 <header class="py-3 mb-4 border-bottom">
   <div class="container d-flex justify-content-around">
-    <h5 class="h5">All Donor Details </h5>
+    <h5 class="h5">Available Medicine Details </h5>
   </div>
 </header>
 
-<main>
+<main class="container">
 
-  <table class="table table-bordered">
+  <div>
+
+    <a href="#" role="button" id=”addMedicine” class="btn btn-outline-primary">Add Medicine
+      Details </a>
+    <a href="/adminViewDonations" role="button" id=”viewAllDonateData”
+       class="btn btn-outline-primary">View All User Donate Data </a>
+    <a href="#" role="button" id=”viewAllRequestData” class="btn btn-outline-primary">View All User
+      Request Data </a>
+
+  </div>
+
+  <table class="table table-bordered pt-5">
     <thead>
     <tr>
-      <th scope="col">Medicine Category</th>
+      <th scope="col">Medicine Id</th>
       <th scope="col">Medicine Name</th>
+      <th scope="col">Medicine Category</th>
       <th scope="col">Medicine Quantity</th>
-      <th scope="col">Donor Name</th>
-      <th scope="col">Pickup Address</th>
-      <th scope="col">Donated Date</th>
     </tr>
     </thead>
 
     <tbody>
     <tr>
-      <td id="medCategory"></td>
-      <td id="medName"></td>
-      <td id="medQty"></td>
-      <td id="donorName"></td>
-      <td id="pickupAddress"></td>
-      <td id="donatedDate"></td>
+      <th id="medId1" scope="row">1</th>
+      <td id="medName1">medName1</td>
+      <td id="medCategory1">medCategory1</td>
+      <td id="medQty1">medQty1</td>
     </tr>
 
     <tr>
       <td colspan="6">
         <div class="text-center">
-          <label id=”noData”>No data found</label>
+          <label id=”noData”>No medicines found</label>
         </div>
       </td>
 
     </tr>
     </tbody>
-
   </table>
-
 
 </main>
 
