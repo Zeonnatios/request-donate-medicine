@@ -16,4 +16,9 @@ public class AdminController {
     return "admin/viewDonations";
   }
 
+  @GetMapping(value="/addMedicine")
+  public String getAdminAddMedicinePage() {
+    return "admin/addMedicine";
+  }
+
 }
