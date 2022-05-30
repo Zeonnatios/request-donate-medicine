@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Register</title>
+  <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 
+<main id="main" class="container my-5">
+
+  <div class="text-center">
+    <a href="/login">Log In</a>
+  </div>
+
+  <form action="/register" method="POST" name="loginForm">
+
+    <h1 class="h1" id="title">Register</h1>
+
+    <div class="form-group row my-4">
+      <label id="labelUserName" for="userName"
+             class="col-sm-2 col-form-label">Username:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="userName"
+               name="username" placeholder="Username" minlength="3" maxlength="30" required>
+      </div>
+    </div>
+
+    <div class="form-group row my-4">
+      <label id="labelPassword" for="password"
+             class="col-sm-2 col-form-label">Password: </label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="password"
+               name="password" placeholder="Password" minlength="6" maxlength="30" required>
+      </div>
+    </div>
+
+    <div class="form-group row my-4">
+      <label id="labelAge" for="age"
+             class="col-sm-2 col-form-label">Age: </label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="age"
+               name="age" placeholder="Age" min="18" max="100" required>
+      </div>
+    </div>
+
+    <div class="form-group row my-4">
+      <label id="labelGenger" for="gender"
+             class="col-sm-2 col-form-label">Gender: </label>
+      <div class="col-sm-10">
+        <select class="form-control" id="gender" name="gender">
+          <option value="Male" selected>Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row my-4">
+      <label id="labelAddress" for="userName"
+             class="col-sm-2 col-form-label">Address:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address"
+               name="address" placeholder="Address" minlength="6" maxlength="30" required>
+      </div>
+    </div>
+
+    <button id="register" class="w-100 btn btn-success" type="submit">REGISTER NOW </button>
+  </form>
+
+</main>
+
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
 </html>
