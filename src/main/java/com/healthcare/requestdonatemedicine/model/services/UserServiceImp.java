@@ -25,6 +25,10 @@ public class UserServiceImp implements UserService {
   public boolean validateUser(String username, String password) {
     User user = userRepository.findByUsername(username);
 
+    if (user == null) {
+      return false;
+    }
+
     return (username.equals(user.getUsername()) && password.equals(user.getPassword()));
   }
 

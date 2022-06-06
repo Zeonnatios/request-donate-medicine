@@ -23,7 +23,7 @@ public class User implements Serializable {
   @Column(name = "password", nullable = false, length = 30)
   private String password;
 
-  @NotBlank(message = "Invalid Input")
+  @NotNull(message = "Invalid Input")
   @Min(value = 18, message = "Invalid Input")
   @Max(value = 100, message = "Invalid Input")
   @Column(name = "age", nullable = false)
@@ -86,4 +86,15 @@ public class User implements Serializable {
     this.address = address;
   }
 
+  @Override
+  public String toString() {
+    return "User{" +
+        "id=" + id +
+        ", username='" + username + '\'' +
+        ", password='" + password + '\'' +
+        ", age=" + age +
+        ", gender='" + gender + '\'' +
+        ", address='" + address + '\'' +
+        '}';
+  }
 }

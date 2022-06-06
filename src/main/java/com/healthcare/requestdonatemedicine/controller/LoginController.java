@@ -44,7 +44,8 @@ public class LoginController {
   }
 
   @GetMapping(value = "/logout")
-  public String logout() {
+  public String logout(HttpServletRequest request) {
+    request.getSession().removeAttribute("user");
     return "redirect:/login";
   }
 

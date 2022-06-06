@@ -10,6 +10,9 @@
 <body>
 
 <main id="main" class="container my-5">
+
+  <div id="message" align="center" th:text="${errorMessage}"/>
+
   <form action="/login" method="POST" name="loginForm">
 
     <h1 class="h1" id="title">Login</h1>
