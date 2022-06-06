@@ -1,5 +1,6 @@
 insert into USERS (USERNAME, PASSWORD, AGE, GENDER, ADDRESS)
-  values ('Admin', 'Admin@123', 22, 'Male', 'Admin Address');
+  values ('Admin', 'Admin@123', 22, 'Male', 'Admin Address'),
+         ('User', 'User@123', 22, 'Male', 'User Address');
 
 insert into MEDICINE (NAME, CATEGORY, QUANTITY)
   values ('Resfenol', 'FEVER', 120);
