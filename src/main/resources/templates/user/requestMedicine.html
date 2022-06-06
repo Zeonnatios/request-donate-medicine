@@ -1,33 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Request and Donate  </title>
+  <title>Request and Donate </title>
   <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 
-<nav class="py-2 bg-light border-bottom">
-  <div class="container d-flex flex-wrap">
-    <ul class="nav me-auto">
-      <li class="nav-item"><a
-          href="/userhome"
-          class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-      </li>
-      <li class="nav-item"><a
-          href="/logout"
-          class="nav-link link-dark px-2">Logout</a></li>
-      <li class="nav-item">
-        <label class="nav-link link-dark px-2" id="welcomeUserName">Logged in User: ...</label>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div th:replace="fragments/navbar :: navbar"></div>
 
 <main id="main" class="container my-5">
   <form action="/" method="POST" name="donateForm">
 
-    <h1 class="h1" id="title">Request and Donate  </h1>
+    <h1 class="h1" id="title">Request and Donate </h1>
 
     <div class="form-group row my-4">
       <label id="labelMedCategory" for="medCategory "

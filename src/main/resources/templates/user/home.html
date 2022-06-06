@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>User Home</title>
@@ -7,22 +8,7 @@
 </head>
 <body>
 
-<nav class="py-2 bg-light border-bottom">
-  <div class="container d-flex flex-wrap">
-    <ul class="nav me-auto">
-      <li class="nav-item"><a
-          href="/userhome"
-          class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-      </li>
-      <li class="nav-item"><a
-          href="/logout"
-          class="nav-link link-dark px-2">Logout</a></li>
-      <li class="nav-item">
-        <label class="nav-link link-dark px-2" id="welcomeUserName">Logged in User: ...</label>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div th:replace="fragments/navbar :: navbar"></div>
 
 <header class="py-3 mb-4 border-bottom">
   <div class="container d-flex justify-content-around">
@@ -34,11 +20,13 @@
 
   <div class="mb-5">
 
-    <a href="/userRequestMedicine" role="button" id=”requestMedicine” class="btn btn-outline-primary">Request
+    <a href="/userRequestMedicine" role="button" id=”requestMedicine”
+       class="btn btn-outline-primary">Request
       Medicine</a>
     <a href="/userDonateMedicine" role="button" id=”donateMedicine” class="btn btn-outline-primary">Donate
       Medicine</a>
-    <a href="/userViewDonateMedicine" role="button" id=”viewDonateMedicine” class="btn btn-outline-primary">View Donate
+    <a href="/userViewDonateMedicine" role="button" id=”viewDonateMedicine”
+       class="btn btn-outline-primary">View Donate
       Medicine</a>
 
   </div>

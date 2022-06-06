@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>All Request Details</title>
@@ -7,22 +8,7 @@
 </head>
 <body>
 
-<nav class="py-2 bg-light border-bottom">
-  <div class="container d-flex flex-wrap">
-    <ul class="nav me-auto">
-      <li class="nav-item"><a
-          href="/adminhome"
-          class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-      </li>
-      <li class="nav-item"><a
-          href="/logout"
-          class="nav-link link-dark px-2">Logout</a></li>
-      <li class="nav-item">
-        <label class="nav-link link-dark px-2" id="welcomeUserName">Logged in User: ...</label>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div th:replace="fragments/navbar :: navbar"></div>
 
 <header class="py-3 mb-4 border-bottom">
   <div class="container d-flex justify-content-around">
@@ -39,7 +25,7 @@
       <th scope="col">Medicine Name</th>
       <th scope="col">Medicine Quantity</th>
       <th scope="col">Requester Name</th>
-      <th scope="col">Delivered Address </th>
+      <th scope="col">Delivered Address</th>
       <th scope="col">Requested Date</th>
     </tr>
     </thead>

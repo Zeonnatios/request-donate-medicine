@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Donate Medicine </title>
@@ -7,22 +8,7 @@
 </head>
 <body>
 
-<nav class="py-2 bg-light border-bottom">
-  <div class="container d-flex flex-wrap">
-    <ul class="nav me-auto">
-      <li class="nav-item"><a
-          href="/userhome"
-          class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-      </li>
-      <li class="nav-item"><a
-          href="/logout"
-          class="nav-link link-dark px-2">Logout</a></li>
-      <li class="nav-item">
-        <label class="nav-link link-dark px-2" id="welcomeUserName">Logged in User: ...</label>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div th:replace="fragments/navbar :: navbar"></div>
 
 <main id="main" class="container my-5">
   <form action="/" method="POST" name="donateForm">
@@ -34,7 +20,8 @@
              class="col-sm-2 col-form-label">Medicine Category:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="medCategory"
-               name="medCategory" placeholder="Medicine Category" minlength="4" maxlength="30" required>
+               name="medCategory" placeholder="Medicine Category" minlength="4" maxlength="30"
+               required>
       </div>
     </div>
 
@@ -43,7 +30,8 @@
              class="col-sm-2 col-form-label">Medicine Name:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="donateMedName"
-               name="donateMedName" placeholder="Medicine Name" minlength="4" maxlength="30" required>
+               name="donateMedName" placeholder="Medicine Name" minlength="4" maxlength="30"
+               required>
       </div>
     </div>
 
