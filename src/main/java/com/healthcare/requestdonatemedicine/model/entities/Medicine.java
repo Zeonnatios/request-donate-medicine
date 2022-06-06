@@ -23,7 +23,7 @@ public class Medicine implements Serializable {
   @Column(name = "category", nullable = false, length = 30)
   private String category;
 
-  @NotBlank(message = "Invalid Input")
+  @NotNull(message = "Invalid Input")
   @Min(value = 4, message = "Invalid Input")
   @Max(value = 9999, message = "Invalid Input")
   @Column(name = "quantity", nullable = false)

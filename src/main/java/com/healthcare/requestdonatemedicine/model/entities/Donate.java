@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -27,7 +28,7 @@ public class Donate implements Serializable {
   @Column(name = "medName", nullable = false, length = 30)
   private String medName;
 
-  @NotBlank(message = "Invalid Input")
+  @NotNull(message = "Invalid Input")
   @Min(value = 1, message = "Invalid Input")
   @Column(name = "medQuantity", nullable = false)
   private Integer medQuantity;
