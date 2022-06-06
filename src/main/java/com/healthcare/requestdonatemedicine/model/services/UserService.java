@@ -8,4 +8,6 @@ public interface  UserService {
 
   public User findUserByUsername(String username);
 
+  boolean validateUser(String username, String password);
+
 }

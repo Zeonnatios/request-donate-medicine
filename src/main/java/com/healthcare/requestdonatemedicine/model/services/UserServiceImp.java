@@ -20,4 +20,12 @@ public class UserServiceImp implements UserService {
   public User findUserByUsername(String username) {
     return userRepository.findByUsername(username);
   }
+
+  @Override
+  public boolean validateUser(String username, String password) {
+    User user = userRepository.findByUsername(username);
+
+    return (username.equals(user.getUsername()) && password.equals(user.getPassword()));
+  }
+
 }

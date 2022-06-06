@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Admin Home</title>
@@ -18,7 +19,8 @@
           href="/logout"
           class="nav-link link-dark px-2">Logout</a></li>
       <li class="nav-item">
-        <label class="nav-link link-dark px-2" id="welcomeUserName">Logged in User: ...</label>
+        <label class="nav-link link-dark px-2" id="welcomeUserName"
+               th:text="Logged in User: ${session.user.username}"></label>
       </li>
     </ul>
   </div>
