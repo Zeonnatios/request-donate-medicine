@@ -40,20 +40,19 @@
     </thead>
 
     <tbody>
-    <tr>
-      <th id="medId1" scope="row">1</th>
-      <td id="medName1">medName1</td>
-      <td id="medCategory1">medCategory1</td>
-      <td id="medQty1">medQty1</td>
+    <tr th:each="medicine, loop : ${medicineList}">
+      <th th:id="medId+${loop.index + 1}" scope="row" th:text="${medicine.id}"></th>
+      <td th:id="medName+${loop.index + 1}" th:text="${medicine.name}"/>
+      <td th:id="medCategory+${loop.index + 1}" th:text="${medicine.category}"/>
+      <td th:id="medQty+${loop.index + 1}" th:text="${medicine.quantity}"/>
     </tr>
 
-    <tr>
+    <tr th:if="${#lists.isEmpty(medicineList)}">
       <td colspan="6">
         <div class="text-center">
           <label id=”noData”>No medicines found</label>
         </div>
       </td>
-
     </tr>
     </tbody>
   </table>
