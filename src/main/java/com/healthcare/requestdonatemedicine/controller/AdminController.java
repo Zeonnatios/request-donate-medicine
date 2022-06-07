@@ -42,7 +42,7 @@ public class AdminController {
 
     medicineService.saveMedicine(medicine);
 
-    return "rediect:/adminhome";
+    return "redirect:/adminhome";
   }
 
   @GetMapping(value = "/adminViewRequests")

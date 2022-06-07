@@ -28,9 +28,8 @@ public class UserController {
     if (bindingResult.hasErrors()) {
       return "register";
     }
-    System.out.println(user);
-    userService.saveUser(user);
 
+    userService.saveUser(user);
     return "register";
   }
 
