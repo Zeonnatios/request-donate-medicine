@@ -24,7 +24,7 @@ public class Medicine implements Serializable {
   private String category;
 
   @NotNull(message = "Invalid Input")
-  @Min(value = 4, message = "Invalid Input")
+  @Min(value = 1, message = "Invalid Input")
   @Max(value = 9999, message = "Invalid Input")
   @Column(name = "quantity", nullable = false)
   private Integer quantity;
@@ -60,5 +60,15 @@ public class Medicine implements Serializable {
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
+  }
+
+  @Override
+  public String toString() {
+    return "Medicine{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", category='" + category + '\'' +
+        ", quantity=" + quantity +
+        '}';
   }
 }

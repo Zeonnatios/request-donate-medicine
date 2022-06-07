@@ -12,9 +12,21 @@ public class MedicineServiceImp implements MedicineService {
   @Autowired
   private MedicineRepository medicineRepository;
 
+
+  @Override
+  public Medicine findMedicineIfExists(String name) {
+    return medicineRepository.findMedicineIfExists(name);
+  }
+
   @Override
   public void saveMedicine(Medicine medicine) {
-    medicineRepository.save(medicine);
+    Medicine medicineIsFound = findMedicineIfExists(medicine.getName());
+    if (medicineIsFound != null) {
+      int medicineAmount = medicineIsFound.getQuantity() + medicine.getQuantity();
+      medicineRepository.updateQuantityOfMedicines(medicineAmount, medicineIsFound.getId());
+    } else {
+      medicineRepository.save(medicine);
+    }
   }
 
   @Override

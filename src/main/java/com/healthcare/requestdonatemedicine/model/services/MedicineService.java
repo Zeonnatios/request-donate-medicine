@@ -9,4 +9,6 @@ public interface MedicineService {
 
   public List<Medicine> getAllMedicines();
 
+  public Medicine findMedicineIfExists(String name);
+
 }
