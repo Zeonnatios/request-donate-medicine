@@ -42,9 +42,9 @@
     <tbody>
     <tr th:each="medicine, loop : ${medicineList}">
       <th th:id="medId+${loop.index + 1}" scope="row" th:text="${medicine.id}"></th>
-      <td th:id="medName+${loop.index + 1}" th:text="${medicine.name}"/>
-      <td th:id="medCategory+${loop.index + 1}" th:text="${medicine.category}"/>
-      <td th:id="medQty+${loop.index + 1}" th:text="${medicine.quantity}"/>
+      <td th:id="medName+${loop.index + 1}" th:text="${medicine.name}"></td>
+      <td th:id="medCategory+${loop.index + 1}" th:text="${medicine.category}"></td>
+      <td th:id="medQty+${loop.index + 1}" th:text="${medicine.quantity}"></td>
     </tr>
 
     <tr th:if="${#lists.isEmpty(medicineList)}">

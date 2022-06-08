@@ -31,16 +31,16 @@
     </thead>
 
     <tbody>
-    <tr>
-      <td id="medCategory"></td>
-      <td id="medName"></td>
-      <td id="medQty"></td>
-      <td id="donorName"></td>
-      <td id="pickupAddress"></td>
-      <td id="donatedDate"></td>
+    <tr th:each="donate, loop : ${donationsList}">
+      <td th:id="medCategory+${loop.index + 1}" th:text="${donate.category}"></td>
+      <td th:id="medName+${loop.index + 1}" th:text="${donate.name}"></td>
+      <td th:id="medQty+${loop.index + 1}" th:text="${donate.quantity}"></td>
+      <td th:id="donorName+${loop.index + 1}" th:text="${donate.username}"></td>
+      <td th:id="pickupAddress+${loop.index + 1}" th:text="${donate.address}"></td>
+      <td th:id="donatedDate+${loop.index + 1}" th:text="${donate.requestedDate}"></td>
     </tr>
 
-    <tr>
+    <tr th:if="${#lists.isEmpty(donationsList)}">
       <td colspan="6">
         <div class="text-center">
           <label id=”noData”>No data found</label>

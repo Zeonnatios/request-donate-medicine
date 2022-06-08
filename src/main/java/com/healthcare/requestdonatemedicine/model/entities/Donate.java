@@ -19,18 +19,18 @@ public class Donate implements Serializable {
 
   @NotBlank(message = "Invalid Input")
   @Size(min = 4, max = 30, message = "Invalid Input")
-  @Column(name = "medCategory", nullable = false, length = 30)
-  private String medCategory;
+  @Column(name = "category", nullable = false, length = 30)
+  private String category;
 
   @NotBlank(message = "Invalid Input")
   @Size(min = 4, max = 30, message = "Invalid Input")
-  @Column(name = "medName", nullable = false, length = 30)
-  private String medName;
+  @Column(name = "name", nullable = false, length = 30)
+  private String name;
 
   @NotNull(message = "Invalid Input")
   @Min(value = 1, message = "Invalid Input")
-  @Column(name = "medQuantity", nullable = false)
-  private Integer medQuantity;
+  @Column(name = "quantity", nullable = false)
+  private Integer quantity;
 
   @NotBlank(message = "Invalid Input")
   @Size(min = 3, max = 30, message = "Invalid Input")
@@ -55,28 +55,28 @@ public class Donate implements Serializable {
     this.id = id;
   }
 
-  public String getMedCategory() {
-    return medCategory;
+  public String getCategory() {
+    return category;
   }
 
-  public void setMedCategory(String medCategory) {
-    this.medCategory = medCategory;
+  public void setCategory(String category) {
+    this.category = category;
   }
 
-  public String getMedName() {
-    return medName;
+  public String getName() {
+    return name;
   }
 
-  public void setMedName(String medName) {
-    this.medName = medName;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Integer getMedQuantity() {
-    return medQuantity;
+  public Integer getQuantity() {
+    return quantity;
   }
 
-  public void setMedQuantity(Integer medQuantity) {
-    this.medQuantity = medQuantity;
+  public void setQuantity(Integer quantity) {
+    this.quantity = quantity;
   }
 
   public String getUsername() {
@@ -101,5 +101,18 @@ public class Donate implements Serializable {
 
   public void setRequestedDate(Date requestedDate) {
     this.requestedDate = requestedDate;
+  }
+
+  @Override
+  public String toString() {
+    return "Donate{" +
+        "id=" + id +
+        ", category='" + category + '\'' +
+        ", name='" + name + '\'' +
+        ", quantity=" + quantity +
+        ", username='" + username + '\'' +
+        ", address='" + address + '\'' +
+        ", requestedDate=" + requestedDate +
+        '}';
   }
 }

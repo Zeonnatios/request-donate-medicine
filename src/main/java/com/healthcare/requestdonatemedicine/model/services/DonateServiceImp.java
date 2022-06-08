@@ -4,7 +4,9 @@ import com.healthcare.requestdonatemedicine.model.entities.Donate;
 import com.healthcare.requestdonatemedicine.model.repository.DonateRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DonateServiceImp implements DonateService {
 
   @Autowired

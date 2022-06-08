@@ -1,6 +1,7 @@
 package com.healthcare.requestdonatemedicine.controller;
 
 import com.healthcare.requestdonatemedicine.model.entities.Medicine;
+import com.healthcare.requestdonatemedicine.model.services.DonateService;
 import com.healthcare.requestdonatemedicine.model.services.MedicineService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class AdminController {
   @Autowired
   private MedicineService medicineService;
 
+  @Autowired
+  private DonateService donateService;
+
   @GetMapping("/adminhome")
   public String getAdminHomePage(Model model) {
     model.addAttribute("medicineList", medicineService.getAllMedicines());
@@ -23,7 +27,10 @@ public class AdminController {
   }
 
   @GetMapping(value = "/adminViewDonations")
-  public String getAdminViewDonationsPage() {
+  public String getAdminViewDonationsPage(Model model) {
+
+    model.addAttribute("donationsList", donateService.getAllDonations());
+
     return "admin/viewDonations";
   }
 
