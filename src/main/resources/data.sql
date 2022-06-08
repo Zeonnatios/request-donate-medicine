@@ -3,8 +3,11 @@ insert into USERS (USERNAME, PASSWORD, AGE, GENDER, ADDRESS)
          ('User', 'User@123', 22, 'Male', 'User Address');
 
 insert into MEDICINE (NAME, CATEGORY, QUANTITY)
-  values ('Resfenol', 'FEVER', 120);
+  values ('Resfenol', 'Fever', 120);
 
  insert into DONATE (CATEGORY, NAME, QUANTITY, USERNAME, ADDRESS, REQUESTED_DATE)
-  values ('FEVER', 'Resfenol', 10, 'User', 'User Address', '2022-05-29');
+  values ('Fever', 'Resfenol', 50, 'User', 'User Address', '2022-05-29');
+
+   insert into REQUEST (CATEGORY, NAME, QUANTITY, USERNAME, ADDRESS, REQUESTED_DATE)
+  values ('Fever', 'Resfenol', 10, 'User', 'User Address', '2022-05-29');
 
