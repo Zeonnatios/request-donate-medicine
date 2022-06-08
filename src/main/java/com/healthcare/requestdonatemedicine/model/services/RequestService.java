@@ -9,4 +9,6 @@ public interface RequestService {
 
   public List<Request> getAllRequests();
 
+  public List<Request> getAllRequestsByUser(String name);
+
 }

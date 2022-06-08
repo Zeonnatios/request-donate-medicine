@@ -21,4 +21,9 @@ public class RequestServiceImp implements RequestService {
   public List<Request> getAllRequests() {
     return requestRepository.findAll();
   }
+
+  @Override
+  public List<Request> getAllRequestsByUser(String name) {
+    return requestRepository.findRequestsByUsername(name);
+  }
 }

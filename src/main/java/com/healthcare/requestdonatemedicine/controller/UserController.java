@@ -3,6 +3,7 @@ package com.healthcare.requestdonatemedicine.controller;
 import com.healthcare.requestdonatemedicine.model.entities.Donate;
 import com.healthcare.requestdonatemedicine.model.entities.User;
 import com.healthcare.requestdonatemedicine.model.services.DonateService;
+import com.healthcare.requestdonatemedicine.model.services.RequestService;
 import com.healthcare.requestdonatemedicine.model.services.UserService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,6 +24,9 @@ public class UserController {
   @Autowired
   private DonateService donateService;
 
+  @Autowired
+  private RequestService requestService;
+
   @GetMapping(value = "/register")
   public String getRegisterPage(Model model) {
     User user = new User();
@@ -41,7 +45,9 @@ public class UserController {
   }
 
   @GetMapping(value = "/userhome")
-  public String getUserHomePage() {
+  public String getUserHomePage(Model model, HttpServletRequest request) {
+    User user = (User) request.getSession().getAttribute("user");
+    model.addAttribute("requestList", requestService.getAllRequestsByUser(user.getUsername()));
     return "user/home";
   }
 
