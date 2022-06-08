@@ -11,7 +11,7 @@
 <div th:replace="fragments/navbar :: navbar"></div>
 
 <main id="main" class="container my-5">
-  <form action="/" method="POST" name="donateForm">
+  <form th:action="@{/userDonateMedicine}" th:object="${donate}" action="#" method="post">
 
     <h1 class="h1" id="title">Donate Medicine</h1>
 
@@ -21,7 +21,7 @@
       <div class="col-sm-10">
         <input type="text" class="form-control" id="medCategory"
                name="medCategory" placeholder="Medicine Category" minlength="4" maxlength="30"
-               required>
+               th:field="*{category}">
       </div>
     </div>
 
@@ -31,7 +31,7 @@
       <div class="col-sm-10">
         <input type="text" class="form-control" id="donateMedName"
                name="donateMedName" placeholder="Medicine Name" minlength="4" maxlength="30"
-               required>
+               th:field="*{name}">
       </div>
     </div>
 
@@ -40,7 +40,7 @@
              class="col-sm-2 col-form-label">Quantity:</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" id="quantity"
-               name="quantity" placeholder="Quantity" minlength="1" required>
+               name="quantity" placeholder="Quantity" minlength="1" th:field="*{quantity}">
       </div>
     </div>
 

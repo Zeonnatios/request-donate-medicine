@@ -37,7 +37,7 @@
       <td th:id="medQty+${loop.index + 1}" th:text="${donate.quantity}"></td>
       <td th:id="donorName+${loop.index + 1}" th:text="${donate.username}"></td>
       <td th:id="pickupAddress+${loop.index + 1}" th:text="${donate.address}"></td>
-      <td th:id="donatedDate+${loop.index + 1}" th:text="${donate.requestedDate}"></td>
+      <td th:id="donatedDate+${loop.index + 1}" th:text="${#dates.format(donate.requestedDate, 'dd-MM-yyyy')}"></td>
     </tr>
 
     <tr th:if="${#lists.isEmpty(donationsList)}">

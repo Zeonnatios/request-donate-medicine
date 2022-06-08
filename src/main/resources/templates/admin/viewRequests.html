@@ -31,13 +31,13 @@
     </thead>
 
     <tbody>
-    <tr th:each="donate, loop : ${requestsList}">
-      <td th:id="medCategory+${loop.index + 1}"  th:text="${donate.category}"></td>
-      <td th:id="medName+${loop.index + 1}" th:text="${donate.name}"></td>
-      <td th:id="medQty+${loop.index + 1}" th:text="${donate.quantity}"></td>
-      <td th:id="reqName+${loop.index + 1}" th:text="${donate.username}"></td>
-      <td th:id="delAddress+${loop.index + 1}" th:text="${donate.address}"></td>
-      <td th:id="reqDate+${loop.index + 1}" th:text="${donate.requestedDate}"></td>
+    <tr th:each="request, loop : ${requestsList}">
+      <td th:id="medCategory+${loop.index + 1}"  th:text="${request.category}"></td>
+      <td th:id="medName+${loop.index + 1}" th:text="${request.name}"></td>
+      <td th:id="medQty+${loop.index + 1}" th:text="${request.quantity}"></td>
+      <td th:id="reqName+${loop.index + 1}" th:text="${request.username}"></td>
+      <td th:id="delAddress+${loop.index + 1}" th:text="${request.address}"></td>
+      <td th:id="reqDate+${loop.index + 1}" th:text="${#dates.format(request.requestedDate, 'dd-MM-yyyy')}"></td>
     </tr>
 
     <tr th:if="${#lists.isEmpty(requestsList)}">

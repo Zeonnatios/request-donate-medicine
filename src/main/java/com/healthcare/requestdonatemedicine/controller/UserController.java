@@ -1,5 +1,6 @@
 package com.healthcare.requestdonatemedicine.controller;
 
+import com.healthcare.requestdonatemedicine.model.entities.Donate;
 import com.healthcare.requestdonatemedicine.model.entities.User;
 import com.healthcare.requestdonatemedicine.model.services.DonateService;
 import com.healthcare.requestdonatemedicine.model.services.UserService;
@@ -50,14 +51,26 @@ public class UserController {
   }
 
   @GetMapping(value = "/userDonateMedicine")
-  public String getUserDonateMedicinePage() {
+  public String getUserDonateMedicinePage(Model model) {
+    Donate donate = new Donate();
+    model.addAttribute("donate", donate);
     return "user/donateMedicine";
+  }
+
+  @PostMapping(value = "/userDonateMedicine")
+  public String postUserDonateMedicinePage(@Valid Donate donate, BindingResult bindingResult,
+      HttpServletRequest request) {
+    if (bindingResult.hasErrors()) {
+      return "user/donateMedicine";
+    }
+    User user = (User) request.getSession().getAttribute("user");
+    donateService.addDonation(donate, user);
+    return "redirect:/userViewDonateMedicine";
   }
 
   @GetMapping(value = "/userViewDonateMedicine")
   public String getUserViewDonateMedicinePage(Model model, HttpServletRequest request) {
     User user = (User) request.getSession().getAttribute("user");
-    System.out.println(user);
     model.addAttribute("donationsList", donateService.getAllDonationsByUser(user.getUsername()));
 
     return "user/viewDonateMedicine";
