@@ -1,7 +1,6 @@
-package com.healthcare.requestdonatemedicine.controller;
+package com.healthcare.requestdonatemedicine.model.controller;
 
 import com.healthcare.requestdonatemedicine.model.entities.Medicine;
-import com.healthcare.requestdonatemedicine.model.repository.RequestRepository;
 import com.healthcare.requestdonatemedicine.model.services.DonateService;
 import com.healthcare.requestdonatemedicine.model.services.MedicineService;
 import com.healthcare.requestdonatemedicine.model.services.RequestService;

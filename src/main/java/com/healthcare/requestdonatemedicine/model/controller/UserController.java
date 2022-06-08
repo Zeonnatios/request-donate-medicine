@@ -1,4 +1,4 @@
-package com.healthcare.requestdonatemedicine.controller;
+package com.healthcare.requestdonatemedicine.model.controller;
 
 import com.healthcare.requestdonatemedicine.model.entities.Donate;
 import com.healthcare.requestdonatemedicine.model.entities.User;
@@ -6,7 +6,6 @@ import com.healthcare.requestdonatemedicine.model.services.DonateService;
 import com.healthcare.requestdonatemedicine.model.services.RequestService;
 import com.healthcare.requestdonatemedicine.model.services.UserService;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

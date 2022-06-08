@@ -1,4 +1,4 @@
-package com.healthcare.requestdonatemedicine.controller;
+package com.healthcare.requestdonatemedicine.model.controller;
 
 import com.healthcare.requestdonatemedicine.model.entities.User;
 import com.healthcare.requestdonatemedicine.model.services.UserService;
@@ -49,7 +49,7 @@ public class LoginController {
     return "redirect:/login";
   }
 
-  private void setSessionUserAttributes(User user, HttpSession session) {
+  void setSessionUserAttributes(User user, HttpSession session) {
     session.setAttribute("user", user);
   }
 
