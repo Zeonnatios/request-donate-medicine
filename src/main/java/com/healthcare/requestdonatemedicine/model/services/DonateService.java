@@ -9,4 +9,6 @@ public interface DonateService {
 
   public List<Donate> getAllDonations();
 
+  public List<Donate> getAllDonationsByUser(String name);
+
 }

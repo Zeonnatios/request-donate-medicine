@@ -1,7 +1,10 @@
 package com.healthcare.requestdonatemedicine.controller;
 
 import com.healthcare.requestdonatemedicine.model.entities.User;
+import com.healthcare.requestdonatemedicine.model.services.DonateService;
 import com.healthcare.requestdonatemedicine.model.services.UserService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,9 @@ public class UserController {
 
   @Autowired
   private UserService userService;
+
+  @Autowired
+  private DonateService donateService;
 
   @GetMapping(value = "/register")
   public String getRegisterPage(Model model) {
@@ -30,7 +36,7 @@ public class UserController {
     }
 
     userService.saveUser(user);
-    return "register";
+    return "redirect:/login";
   }
 
   @GetMapping(value = "/userhome")
@@ -49,7 +55,11 @@ public class UserController {
   }
 
   @GetMapping(value = "/userViewDonateMedicine")
-  public String getUserViewDonateMedicinePage() {
+  public String getUserViewDonateMedicinePage(Model model, HttpServletRequest request) {
+    User user = (User) request.getSession().getAttribute("user");
+    System.out.println(user);
+    model.addAttribute("donationsList", donateService.getAllDonationsByUser(user.getUsername()));
+
     return "user/viewDonateMedicine";
   }
 

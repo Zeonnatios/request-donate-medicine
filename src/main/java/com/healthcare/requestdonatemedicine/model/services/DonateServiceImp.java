@@ -21,4 +21,10 @@ public class DonateServiceImp implements DonateService {
   public List<Donate> getAllDonations() {
     return donateRepository.findAll();
   }
+
+  @Override
+  public List<Donate> getAllDonationsByUser(String name) {
+    return donateRepository.findDonationsByUsername(name);
+  }
+
 }
