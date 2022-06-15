@@ -15,9 +15,12 @@ public class WebConfig implements WebMvcConfigurer {
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
     registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
-    registry.addResourceHandler("/resources/**")
-        .addResourceLocations("/resources/").setCachePeriod(3600)
-        .resourceChain(true).addResolver(new PathResourceResolver());
+    registry
+        .addResourceHandler("/static/**") // « /static/css/myStatic.css
+        .addResourceLocations("classpath:/static/") // Default Static Loaction
+        .setCachePeriod( 3600 )
+        .resourceChain(true)
+        .addResolver(new PathResourceResolver());
 
   }
 
