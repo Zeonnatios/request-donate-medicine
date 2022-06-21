@@ -22,4 +22,5 @@ public interface MedicineRepository extends JpaRepository<Medicine, Integer> {
   @Query(value = "UPDATE MEDICINE M SET M.quantity = ?1 WHERE M.ID = ?2", nativeQuery = true)
   public void updateQuantityOfMedicines(int quantity, int id);
 
+  public Medicine findByName(String name);
 }
