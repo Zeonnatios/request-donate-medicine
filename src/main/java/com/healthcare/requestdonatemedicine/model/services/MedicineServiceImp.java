@@ -30,6 +30,11 @@ public class MedicineServiceImp implements MedicineService {
   }
 
   @Override
+  public List<String> getAllCategories() {
+    return medicineRepository.getAllCategories();
+  }
+
+  @Override
   public List<Medicine> getAllMedicines() {
     return medicineRepository.findAll();
   }

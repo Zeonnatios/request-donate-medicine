@@ -20,14 +20,20 @@
 
   <div class="mb-5">
 
-    <a href="/userRequestMedicine" role="button" id=”requestMedicine”
-       class="btn btn-outline-primary">Request
-      Medicine</a>
-    <a href="/userDonateMedicine" role="button" id=”donateMedicine” class="btn btn-outline-primary">Donate
-      Medicine</a>
-    <a href="/userViewDonateMedicine" role="button" id=”viewDonateMedicine”
-       class="btn btn-outline-primary">View Donate
-      Medicine</a>
+    <form th:action="@{/userRequestMedicine}" method="get" action="#">
+      <button id="requestMedicine" th:id="requestMedicine" name="requestMedicine" th:name="requestMedicine"
+              class="btn btn-outline-primary">Request Medicine</button>
+    </form>
+
+    <form th:action="@{/userDonateMedicine}" method="get" action="#">
+      <button id="donateMedicine" th:id="donateMedicine" name="donateMedicine" th:name="donateMedicine"
+              class="btn btn-outline-primary">Donate Medicine</button>
+    </form>
+
+    <form th:action="@{/userViewDonateMedicine}" method="get" action="#">
+      <button id="viewDonateMedicine" th:id="viewDonateMedicine" name="viewDonateMedicine" th:name="viewDonateMedicine"
+              class="btn btn-outline-primary">View Donate Medicine</button>
+    </form>
 
   </div>
 
@@ -56,7 +62,7 @@
     <tr th:if="${#lists.isEmpty(requestList)}">
       <td colspan="6">
         <div class="text-center">
-          <label id=”noData”>No data found</label>
+          <label id="noData">No data found</label>
         </div>
       </td>
 

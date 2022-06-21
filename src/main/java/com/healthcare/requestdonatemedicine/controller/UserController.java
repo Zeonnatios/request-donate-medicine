@@ -1,8 +1,10 @@
 package com.healthcare.requestdonatemedicine.controller;
 
 import com.healthcare.requestdonatemedicine.model.entities.Donate;
+import com.healthcare.requestdonatemedicine.model.entities.Request;
 import com.healthcare.requestdonatemedicine.model.entities.User;
 import com.healthcare.requestdonatemedicine.model.services.DonateService;
+import com.healthcare.requestdonatemedicine.model.services.MedicineService;
 import com.healthcare.requestdonatemedicine.model.services.RequestService;
 import com.healthcare.requestdonatemedicine.model.services.UserService;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +27,9 @@ public class UserController {
 
   @Autowired
   private RequestService requestService;
+
+  @Autowired
+  private MedicineService medicineService;
 
   @GetMapping(value = "/register")
   public String getRegisterPage(Model model) {
@@ -51,8 +56,17 @@ public class UserController {
   }
 
   @GetMapping(value = "/userRequestMedicine")
-  public String getUserRequestMedicinePage() {
+  public String getUserRequestMedicinePage(Model model) {
+    System.out.println(medicineService.getAllCategories());
+    model.addAttribute("medicineList", medicineService.getAllMedicines());
+    model.addAttribute("medicineCategories", medicineService.getAllCategories());
     return "user/requestMedicine";
+  }
+
+  @PostMapping(value = "/userRequestMedicine")
+  public String postUserRequestMedicinePage(Model model) {
+
+    return "redirect:/userhome";
   }
 
   @GetMapping(value = "/userDonateMedicine")

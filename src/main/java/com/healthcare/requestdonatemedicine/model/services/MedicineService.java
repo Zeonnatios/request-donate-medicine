@@ -11,4 +11,6 @@ public interface MedicineService {
 
   public Medicine findMedicineIfExists(String name);
 
+  public List<String> getAllCategories();
+
 }

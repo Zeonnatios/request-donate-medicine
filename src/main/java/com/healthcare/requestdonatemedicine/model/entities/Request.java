@@ -39,18 +39,9 @@ public class Request implements Serializable {
   @Column(name = "quantity", nullable = false)
   private Integer quantity;
 
-  @NotBlank(message = "Invalid Input")
-  @Size(min = 3, max = 30, message = "Invalid Input")
-  @Column(name = "username", nullable = false, length = 30)
+
   private String username;
-
-  @NotBlank(message = "Invalid Input")
-  @Size(min = 6, max = 30, message = "Invalid Input")
-  @Column(name = "address", nullable = false, length = 30)
   private String address;
-
-  @Temporal(TemporalType.DATE)
-  @Column(name = "requestedDate", nullable = false)
   private Date requestedDate;
 
   public Integer getId() {
